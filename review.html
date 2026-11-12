@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Видеообзор и Галереи | Умная теплица</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/player.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+
+  <!-- SITE HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="nav-container">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Главная</a></li>
+          <li><a href="review.html" class="nav-link active">Видеообзор и Галереи</a></li>
+          <li><a href="model.html" class="nav-link">3D Модель</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- VIDEO SECTION (FRAME 2 DESIGN) -->
+    <section id="video" class="video-section section">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">Видеообзор Умной Теплицы</h1>
+          <p class="section-desc">
+            Полная презентация работы прототипа, системы автоматизации полива, климатических алгоритмов и аппаратной части.
+          </p>
+        </div>
+
+        <div class="video-wrapper">
+          <div class="video-container">
+            <video class="custom-video" preload="metadata" poster="Рендер%20модели/Identical_reconstruction_first_i…_2K_202607182048.jpeg">
+              <source src="Видеообзор/Умная%20теплица%20(1).mp4" type="video/mp4" />
+              Ваш браузер не поддерживает видео HTML5.
+            </video>
+
+            <!-- Center Big Play Button (From Frame 2) -->
+            <button class="video-center-btn" aria-label="Воспроизвести">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+
+            <!-- Custom Controls Overlay -->
+            <div class="video-controls">
+              <div class="video-timeline-container">
+                <div class="video-timeline">
+                  <div class="video-buffer"></div>
+                  <div class="video-progress"></div>
+                </div>
+              </div>
+
+              <div class="video-controls-row">
+                <div class="video-controls-left">
+                  <button class="control-btn play-toggle-btn" aria-label="Play/Pause">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </button>
+
+                  <div class="volume-container">
+                    <button class="control-btn mute-btn" aria-label="Mute">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                      </svg>
+                    </button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.05" value="1.0" />
+                  </div>
+
+                  <div class="video-time">
+                    <span class="video-time-current">00:00</span> / <span class="video-time-total">00:00</span>
+                  </div>
+                </div>
+
+                <div class="video-controls-right">
+                  <button class="control-btn fullscreen-btn" aria-label="Fullscreen">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY 1: RENDERS (FRAME 2) -->
+    <section id="gallery-renders" class="gallery-section">
+      <div class="container">
+        <div class="gallery-block" id="renderGallery">
+          <div class="gallery-header-row">
+            <div class="gallery-title-group">
+              <h3>Рендер модели</h3>
+              <p>Фотореалистичные рендеры проекта в различных ракурсах: общий план, аэросъемка, детализация узлов и интерьер теплицы.</p>
+            </div>
+
+            <div class="gallery-nav-buttons">
+              <button class="gallery-nav-btn prev-btn" aria-label="Назад">←</button>
+              <button class="gallery-nav-btn next-btn" aria-label="Вперед">→</button>
+            </div>
+          </div>
+
+          <!-- 3D Carousel Stage -->
+          <div class="carousel-stage">
+            <div class="carousel-track">
+              <!-- Render slides injected by JS -->
+            </div>
+          </div>
+
+          <div class="carousel-dots"></div>
+          <div class="gallery-thumbs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY 2: RAW MODEL / PROTOTYPE (FRAME 2) -->
+    <section id="gallery-raw" class="gallery-section">
+      <div class="container">
+        <div class="gallery-block" id="rawGallery">
+          <div class="gallery-header-row">
+            <div class="gallery-title-group">
+              <h3>Сырая модель и процесс сборки</h3>
+              <p>Чертежи, геометрические модели из SketchUp, этапы лазерной резки, сборки макета и физического прототипа.</p>
+            </div>
+
+            <div class="gallery-nav-buttons">
+              <button class="gallery-nav-btn prev-btn" aria-label="Назад">←</button>
+              <button class="gallery-nav-btn next-btn" aria-label="Вперед">→</button>
+            </div>
+          </div>
+
+          <!-- 3D Carousel Stage -->
+          <div class="carousel-stage">
+            <div class="carousel-track">
+              <!-- Raw model slides injected by JS -->
+            </div>
+          </div>
+
+          <div class="carousel-dots"></div>
+          <div class="gallery-thumbs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D CTA BANNER -->
+    <section class="section" style="padding-top: 20px;">
+      <div class="container" style="text-align: center;">
+        <div style="background: linear-gradient(135deg, rgba(30, 32, 40, 0.9), rgba(20, 22, 28, 0.95)); border: 1px solid var(--border-active); border-radius: var(--radius-xl); padding: 60px 40px; box-shadow: var(--shadow-gold);">
+          <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 16px;">Готовы исследовать конструкцию в 3D?</h2>
+          <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 600px; margin: 0 auto 30px;">
+            Откройте интерактивную 3D-модель проекта: вращайте, приближайте, переключайте фитосвет и изучайте геометрию теплицы в реальном времени.
+          </p>
+          <a href="model.html" class="btn btn-primary">
+            <span>Открыть 3D Модель</span>
+            <span class="btn-icon">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" aria-label="Закрыть">✕</button>
+    <button class="lightbox-prev" aria-label="Предыдущее">‹</button>
+    <button class="lightbox-next" aria-label="Следующее">›</button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="Full view" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>🌱 Умная теплица</h3>
+          <p>Инженерный проект по созданию автономного агрокомплекса: 3D-моделирование, электроника, микроклимат и современный веб-интерфейс.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="review.html">Видеообзор</a></li>
+            <li><a href="review.html#gallery-renders">Рендеры</a></li>
+            <li><a href="review.html#gallery-raw">Сырая модель</a></li>
+            <li><a href="model.html">3D Просмотрщик</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Портфолио проект "Умная теплица". Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

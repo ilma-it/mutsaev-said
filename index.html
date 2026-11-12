@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Умная теплица | Портфолио проект</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+</head>
+<body>
+
+  <!-- SITE HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="nav-container">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Главная</a></li>
+          <li><a href="review.html" class="nav-link">Видеообзор и Галереи</a></li>
+          <li><a href="model.html" class="nav-link">3D Модель</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-bg" style="background-image: url('Рендер%20модели/Identical_reconstruction_first_i…_2K_202607182048.jpeg');"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">УМНАЯ ТЕПЛИЦА</h1>
+
+        <div class="hero-actions">
+          <a href="review.html" class="hero-btn-main">
+            <span>Посмотреть обзор</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="model.html" class="btn btn-glass">
+            <span>Интерактивная 3D Модель</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPACT & EXPANDING PHOTO CARDS SECTION -->
+    <section class="cards-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Ключевые этапы и компоненты</h2>
+        </div>
+
+        <div class="cards-container">
+          
+          <!-- CARD 1 -->
+          <div class="expand-card" data-href="model.html">
+            <div class="expand-card-img-wrap">
+              <img class="expand-card-img" src="Рендер%20модели/Identical_reconstruction_first_i…_2K_202607182048.jpeg" alt="3D Проектирование и конструкция" loading="lazy" decoding="async" />
+              <div class="expand-card-overlay"></div>
+            </div>
+
+            <div class="expand-card-content">
+              <div class="expand-card-left">
+                <span class="expand-card-num">01 / МОДЕЛИРОВАНИЕ</span>
+                <h3 class="expand-card-title">3D Проектирование и конструкция</h3>
+                <p class="expand-card-desc">
+                  Полное 3D-моделирование каркаса, полок гидропоники, вентиляционных люков и резервуара в SketchUp.
+                </p>
+                <div class="expand-card-tags">
+                  <span class="expand-card-tag">SketchUp Pro</span>
+                  <span class="expand-card-tag">3D САПР</span>
+                  <span class="expand-card-tag">Оптимизация веса</span>
+                </div>
+              </div>
+              <div class="expand-card-right">
+                <a href="model.html" class="expand-btn">
+                  <span>Открыть в 3D</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="expand-card" data-href="review.html#video">
+            <div class="expand-card-img-wrap">
+              <img class="expand-card-img" src="Рендер%20модели/New_camera_angle_new_perspective_202607182051.jpeg" alt="Автоматика & Климат-контроль" loading="lazy" decoding="async" />
+              <div class="expand-card-overlay"></div>
+            </div>
+
+            <div class="expand-card-content">
+              <div class="expand-card-left">
+                <span class="expand-card-num">02 / АВТОМАТИКА</span>
+                <h3 class="expand-card-title">Экосистема умных датчиков и климат-контроль</h3>
+                <p class="expand-card-desc">
+                  Мониторинг влажности почвы, температуры воздуха, освещенности и концентрации CO2 с обратной связью.
+                </p>
+                <div class="expand-card-tags">
+                  <span class="expand-card-tag">DHT22 / BME280</span>
+                  <span class="expand-card-tag">Влажность почвы</span>
+                  <span class="expand-card-tag">ESP32 / MCU</span>
+                </div>
+              </div>
+              <div class="expand-card-right">
+                <a href="review.html#video" class="expand-btn">
+                  <span>Смотреть видео</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="expand-card" data-href="review.html#gallery-renders">
+            <div class="expand-card-img-wrap">
+              <img class="expand-card-img" src="Рендер%20модели/Overhead_aerial_view_scene_202607181948.jpeg" alt="Капельный полив и фитоосвещение" loading="lazy" decoding="async" />
+              <div class="expand-card-overlay"></div>
+            </div>
+
+            <div class="expand-card-content">
+              <div class="expand-card-left">
+                <span class="expand-card-num">03 / АГРОТЕХНОЛОГИИ</span>
+                <h3 class="expand-card-title">Капельный полив и спектральный LED фитосвет</h3>
+                <p class="expand-card-desc">
+                  Энергоэффективные фитодиоды полного спектра (450nm + 660nm) и дозированная подача раствора по расписанию.
+                </p>
+                <div class="expand-card-tags">
+                  <span class="expand-card-tag">Full Spectrum LED</span>
+                  <span class="expand-card-tag">Капельное орошение</span>
+                  <span class="expand-card-tag">Энергоэффективность</span>
+                </div>
+              </div>
+              <div class="expand-card-right">
+                <a href="review.html#gallery-renders" class="expand-btn">
+                  <span>Смотреть рендеры</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="expand-card" data-href="review.html#gallery-raw">
+            <div class="expand-card-img-wrap">
+              <img class="expand-card-img" src="Рендер%20модели/Upscale_Base_2K_202607182050.jpeg" alt="Физический прототип и сборка" loading="lazy" decoding="async" />
+              <div class="expand-card-overlay"></div>
+            </div>
+
+            <div class="expand-card-content">
+              <div class="expand-card-left">
+                <span class="expand-card-num">04 / ПРОТОТИПИРОВАНИЕ</span>
+                <h3 class="expand-card-title">Физическая сборка и полевые испытания</h3>
+                <p class="expand-card-desc">
+                  От чертежей и лазерной резки макетов до готового рабочего прототипа с калибровкой реле и тестами.
+                </p>
+                <div class="expand-card-tags">
+                  <span class="expand-card-tag">Физический макет</span>
+                  <span class="expand-card-tag">Сборка прототипа</span>
+                  <span class="expand-card-tag">Финальный тест</span>
+                </div>
+              </div>
+              <div class="expand-card-right">
+                <a href="review.html#gallery-raw" class="expand-btn">
+                  <span>Смотреть чертежи</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>🌱 Умная теплица</h3>
+          <p>Инженерный проект по созданию автономного агрокомплекса: 3D-моделирование, электроника, микроклимат и современный веб-интерфейс.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="review.html">Видеообзор</a></li>
+            <li><a href="review.html#gallery-renders">Рендеры</a></li>
+            <li><a href="review.html#gallery-raw">Сырая модель</a></li>
+            <li><a href="model.html">3D Просмотрщик</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Портфолио проект "Умная теплица". Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cards.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+/* ===================================================
+   COMPACT & SMOOTH EXPANDING PHOTO CARDS (FRAME 1)
+   =================================================== */
+
+.hero-section {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 110px 0 60px;
+  overflow: hidden;
+  contain: layout style;
+}
+
+/* Bright & Vibrant Hero Background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(0.92) contrast(1.08) saturate(1.15);
+  transform: scale(1.02);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  will-change: transform;
+}
+
+/* Subtle Transparent Overlay for High Contrast Legibility */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(14, 15, 18, 0.35) 0%, rgba(14, 15, 18, 0.12) 40%, rgba(14, 15, 18, 0.8) 100%),
+    radial-gradient(circle at 50% 50%, transparent 35%, rgba(14, 15, 18, 0.45) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.85),
+    0 10px 40px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(0, 0, 0, 0.5);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-main {
+  padding: 16px 40px;
+  font-size: 1.12rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #d0bf26, #b0a01a);
+  color: #121316;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px var(--accent-gold-glow), 0 4px 15px rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-btn-main:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(208, 191, 38, 0.65);
+}
+
+.hero-btn-main .arrow-icon {
+  width: 22px;
+  height: 22px;
+  stroke: #121316;
+  transition: transform var(--transition-fast);
+}
+
+.hero-btn-main:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* ===================================================
+   SMOOTH EXPANDING CARDS (ACCORDION REVEAL)
+   =================================================== */
+
+.cards-section {
+  padding: 30px 0 90px;
+  position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1060px; /* Compact total width */
+  margin: 0 auto;
+}
+
+/* Expandable Card */
+.expand-card {
+  position: relative;
+  width: 100%;
+  height: 125px; /* Compact initial height */
+  border-radius: 32px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #181920;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+  transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.4s ease,
+              transform 0.35s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0); /* Hardware Acceleration for 60fps */
+}
+
+/* Photo Background */
+.expand-card-img-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.expand-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+  filter: brightness(0.78);
+  transform: translateZ(0);
+}
+
+/* Gradient Overlay */
+.expand-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 13, 16, 0.25) 0%, rgba(12, 13, 16, 0.55) 45%, rgba(12, 13, 16, 0.94) 100%);
+  transition: background 0.4s ease;
+}
+
+/* Content Layout */
+.expand-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 34px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 2;
+  transition: padding 0.4s ease;
+}
+
+.expand-card-left {
+  max-width: 680px;
+}
+
+.expand-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.expand-card-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Description Text - reveals smoothly on expansion */
+.expand-card-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, max-height 0.45s ease, transform 0.4s ease, margin 0.4s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.expand-card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.expand-card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Right Action Button */
+.expand-card-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  background: rgba(208, 191, 38, 0.15);
+  border: 1px solid rgba(208, 191, 38, 0.4);
+  color: var(--accent-gold);
+  font-size: 0.88rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===================================================
+   OPENED / EXPANDED STATE (ON HOVER & ON ACTIVE)
+   =================================================== */
+
+.expand-card:hover,
+.expand-card.active {
+  height: 330px; /* Smooth open height */
+  border-color: var(--accent-gold);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 28px rgba(208, 191, 38, 0.28);
+}
+
+.expand-card:hover .expand-card-img,
+.expand-card.active .expand-card-img {
+  transform: scale(1.025);
+  filter: brightness(0.92);
+}
+
+.expand-card:hover .expand-card-overlay,
+.expand-card.active .expand-card-overlay {
+  background: linear-gradient(180deg, rgba(12, 13, 16, 0.15) 0%, rgba(12, 13, 16, 0.45) 40%, rgba(12, 13, 16, 0.95) 100%);
+}
+
+.expand-card:hover .expand-card-desc,
+.expand-card.active .expand-card-desc {
+  opacity: 1;
+  max-height: 80px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  transform: translateY(0);
+}
+
+.expand-card:hover .expand-btn,
+.expand-card.active .expand-btn {
+  background: var(--accent-gold);
+  color: #121316;
+  box-shadow: 0 0 22px var(--accent-gold-glow);
+  transform: scale(1.05);
+}
+
+/* Responsive & Low-End Mobile Optimizations */
+@media (max-width: 992px) {
+  .cards-container {
+    max-width: 95%;
+  }
+  .expand-card {
+    height: 120px;
+  }
+  .expand-card:hover,
+  .expand-card.active {
+    height: 320px;
+  }
+  .expand-card-content {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 75vh;
+    padding: 90px 0 40px;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+  }
+  .hero-actions {
+    gap: 12px;
+    width: 100%;
+  }
+  .hero-btn-main, .btn-glass {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+  .expand-card {
+    border-radius: 22px;
+    height: 120px;
+  }
+  .expand-card:hover,
+  .expand-card.active {
+    height: 360px;
+  }
+  .expand-card-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px 20px;
+  }
+  .expand-card-right {
+    margin-left: 0;
+    width: 100%;
+  }
+  .expand-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
