@@ -138,7 +138,7 @@ class Greenhouse3DViewer {
     const loaderEl = document.getElementById('viewerLoader');
     const progressFill = document.getElementById('loaderProgressFill');
 
-    const glbUrl = '3Dmodel/3Dteplica.glb';
+    const glbUrl = '3dmodel/3dteplica.glb';
 
     const onModelLoaded = (modelScene) => {
       this.modelGroup = new THREE.Group();
@@ -211,7 +211,7 @@ class Greenhouse3DViewer {
           <div style="text-align: center; padding: 20px;">
             <h3 style="color: #e11d48; margin-bottom: 12px;">Ошибка загрузки 3D модели</h3>
             <p style="color: #94a3b8; max-width: 480px; margin-bottom: 20px;">
-              Не удалось загрузить файл 3Dmodel/3Dteplica.glb. Убедитесь, что сайт запущен через локальный сервер (start_site.bat).
+              Не удалось загрузить файл 3dmodel/3dteplica.glb. Убедитесь, что сайт запущен через локальный сервер (start_site.bat).
             </p>
             <button class="btn btn-primary" onclick="location.reload()">Повторить</button>
           </div>
